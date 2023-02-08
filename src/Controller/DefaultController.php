@@ -8,15 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/default/{name}', name: 'app_default')]
-    public function index($name): Response
+    #[Route('/default', name: 'app_default')]
+    public function index(): Response
     {
-        return $this->redirectToRoute('default2');
-    }
-
-    #[Route('/default2/', name: 'default2')]
-    public function index2(): Response
-    {
-        return new Response('I am from default 2 route');
+        $users = ['Adam', 'Robert', 'John', 'Susan'];
+        return $this->render('default/index.html.twig', [
+            'controller_name' => 'DefaultController',
+            'users' => $users
+        ]);
     }
 }
