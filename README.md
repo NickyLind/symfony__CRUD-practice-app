@@ -18,3 +18,6 @@ To view the DB:
 - src - here a programmer makes all files; controllers, entities, etc.
 - var -cache files, sessions, etc.
 - vendor - folder for external libraries
+
+### List of Symfony commands ###
+- bin/console - shows list of available Symfony commands
